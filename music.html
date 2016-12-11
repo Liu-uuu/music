@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Music Player 音乐播放器</title>
+	<style type="text/css">
+
+		html,body{
+			height:100%;
+		}
+		body{
+			margin:0; overflow:hidden;
+			font:14px/1.8 "微软雅黑";
+			color:#fff;
+		}
+		ul,li{
+			padding:0; margin:0; list-style:none;
+		}
+		#bg {
+			position:absolute; top:0; left:0; z-index:-10;
+			width:100%; height:100%;
+			background-color:#31c27c;
+			background-image:url("");
+			background-size:100%;
+			filter: blur(80px);
+		    -moz-filter: blur(80px);
+		    -webkit-filter: blur(80px);
+		    -o-filter: blur(80px);
+		    -ms-filter: blur(80px);
+		    filter: blur(80px);
+		}
+		#mask {
+			position:absolute; top:0; left:0; z-index:-9;
+			width:100%; height:100%;
+			background:#282828;
+		    -moz-filter: blur(80px);
+		    -webkit-filter: blur(80px);
+		    -o-filter: blur(80px);
+		    -ms-filter: blur(80px);
+		    filter: blur(80px);
+		    opacity:0.2;
+		    filter:Alpha(opacity=20);
+		}
+	</style>
+	<link rel="stylesheet" type="text/css" href="./player.css">
+</head>
+<body>
+<div id="wrap">
+	<div id="songs">
+		<div id="edit">
+			<span id="del_all"><i class="c_img"></i>&nbsp;清空列表</span>
+			<span id="del"><i class="d_img"></i>&nbsp;删除</span>
+			<span class="ser" id="ser"><input type="text"><span>搜索</span></span>
+		</div>
+		<div id="list_wrap">
+			<ul>
+				<!-- <li class="list_title">
+					<span class="check"><input type="checkbox"></span>
+					<span class="name">歌曲</span>
+					<span class="singer">歌手</span>
+					<span class="time">时长</span>
+				</li>
+				<li class="list_item">
+					<span class="check"></span>
+					<span class="order">1</span>
+					<span class="name">我相信</span>
+					<span class="play"></span>
+					<span class="delete"></span>
+					<span class="singer">杨培安</span>
+					<span class="time">04:08</span>
+				</li> -->
+			</ul>
+			<div id="my_scroll">
+				<span></span><i></i>
+			</div>
+		</div>
+		
+	</div>
+
+	<div id="this_song">
+		<div id="pic"></div>
+		<div id="msg">
+			<span>歌曲名：--</span>
+			<span>歌手名：--</span>
+			<span>专辑名：--</span>
+		</div>
+		<div id="lrc">
+			<ul>
+				<li></li>
+			</ul>
+		</div>
+	</div>
+
+	<div id="player">
+		<div id="btns">
+			<span class="pre" id="pre_btn"></span>
+			<span class="play" id="play_btn"></span>
+			<span class="next" id="next_btn"></span>
+		</div>
+		<div id="run">
+			<span>--&nbsp;-&nbsp;--</span><span id="play_time" style="float:right;">00:00/00:00</span>
+			<div class="wai" id="progress_wrap">
+				<div class="nei" id="the_progress">
+					<span></span>
+				</div>
+			</div>
+		</div>
+		<div id="other">
+			<span id="loop" class="loop2"></span>
+			<span id="muted" class="muted1"></span>
+			<span class="wai" id="volume_wrap">
+				<span class="nei" id="the_volume">
+					<span></span>
+				</span>
+			</span>
+		</div>
+
+
+		<!-- <audio src="http://ws.stream.qqmusic.qq.com/C200004BhQke4adHcf.m4a?vkey=EA001FB729C5A28CDDE26B32AE5182F6E2F88B17AED3FAE2DE3515797170181B75B0D103DACC64554F9519F97CE75CF317CFA99C36D74007&guid=1633204569&fromtag=30"></audio> -->
+
+		<!-- <audio controls="" src="http://dl.stream.qqmusic.qq.com/C200000WODW94T6LUO.m4a?vkey=651CEDA992D0B970A7C88D52CB435E215804AAC273E0A06C4168DAF8E593BD39F58708C79588263211371BA76C8741E30E1A7CE9B7480002&guid=1633204569&fromtag=30"></audio> -->
+		<audio></audio>
+	</div>
+
+
+
+
+
+
+
+
+</div>
+<div id="bg"></div>
+<div id="mask"></div>
+<script src="./player.js"></script>
+</body>
+</html>

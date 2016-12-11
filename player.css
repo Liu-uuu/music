@@ -1,0 +1,359 @@
+#wrap{
+	width:1000px; height:100%;
+	margin:0 auto;
+	position:relative;
+	/*background:#666;*/
+}
+
+
+
+#songs{
+	min-height:400px; width:63%; margin-top:60px;
+	/*border:1px solid #fff;*/
+}
+
+#edit{
+	position:relative;
+	padding-bottom:20px;
+}
+#edit span{
+	display:inline-block;
+	width:120px; height:36px; border:1px solid rgba(255,255,255,0.5);
+	line-height:36px; text-align:center;
+	opacity:0.8;
+	cursor:pointer;
+}
+#edit span:hover{
+	border:1px solid #fff;
+	opacity:1;
+}
+#edit i{
+	display:inline-block;
+	width:20px; height:20px;
+	vertical-align:middle;
+}
+#edit .c_img{
+	background-image:url("./img/icon_sprite.png");
+	background-position:-40px -300px;
+}
+#edit .d_img{
+	background-image:url("./img/icon_sprite.png");
+	background-position:-100px -20px;
+}
+#edit span.ser{
+	position:absolute; right:0;
+	width:300px;
+	font-size:0; text-align:left;
+	overflow:hidden;
+}
+#edit span input{
+	height:36px; width:200px; background:#fff;
+	padding:0 10px; margin:0;
+	border:none; outline:medium;
+	font-size:14px; font-family:"微软雅黑";
+}
+#edit .ser span{
+	display:inline-block;
+	width:80px; height:36px; border:none;
+	font-size:16px; vertical-align:top;
+}
+#list_wrap{
+	position:relative;
+	height:360px;
+	overflow:hidden;
+}
+#list_wrap ul{
+	position:absolute;
+	width:100%;
+}
+#songs .list_title{
+	height:50px; line-height:50px;
+	border-top:1px solid rgba(255,255,255,0.1);
+	border-bottom:1px solid rgba(255,255,255,0.1);
+	opacity:0.8;
+	position:relative;
+}
+#songs .list_item{
+	height:50px; line-height:50px;
+	border-bottom:1px solid rgba(255,255,255,0.1);
+	opacity:0.8;
+	position:relative;
+}
+#songs .list_item:hover .play{
+	display:block;
+}
+#songs .list_item:hover .delete{
+	display:block;
+}
+#songs span{
+	display:inline-block;
+	vertical-align:middle;
+}
+#songs .check{
+	width:12px; height:12px; border:1px solid #fff;
+	font-size:0;
+	opacity:0.5;
+}
+#songs .check:hover{
+	opacity:1;
+}
+#songs .checked .check{
+	background-image:url("./img/icon_sprite.png");
+	background-position:-61px -81px;
+	opacity:1;
+}
+#songs .order{
+	position:absolute; left:40px; top:20px;
+	width:10px; height:10px; line-height:10px;
+	background-repeat:no-repeat;
+}
+#songs .playing .order{
+	background-image:url("./img/wave.gif");
+	font-size:0;
+}
+#songs .playing .play{
+	background-position:-120px -200px;
+}
+#songs .name{
+	position:absolute; left:62px;
+}
+#songs .singer{
+	position:absolute; left:354px;
+}
+#songs .time{
+	position:absolute; left:520px;
+}
+#songs .play{
+	position:absolute; left:297px; top:7px;
+	width:36px; height:36px;
+	background-image:url("./img/icon_list_menu.png");
+	background-position:-120px 0px;
+	opacity:0.5;
+	display:none;
+}
+#songs .delete{
+	position:absolute; left:572px; top:7px;
+	width:36px; height:36px;
+	background-image:url("./img/icon_list_menu.png");
+	background-position:-120px -160px;
+	opacity:0.5;
+	display:none;
+}
+#songs .delete:hover,#songs .play:hover{
+	opacity:1;
+}
+
+#my_scroll{
+	position:absolute; top:0; right:0;
+	width:8px; height:360px;
+	border-radius:4px;
+}
+#my_scroll span{
+	display:block;
+	width:1px;
+}
+#my_scroll i{
+	display:block;
+	height:100px;
+	background:#fff;
+	border-radius:4px;
+	opacity:0.1;
+}
+#my_scroll i:hover{
+	opacity:0.3;
+}
+
+
+
+
+
+@keyframes myfirst{
+	from {transform: rotate(0);}
+	to {transform: rotate(360deg);}
+}
+@-moz-keyframes myfirst{
+	from {transform: rotate(0);}
+	to {transform: rotate(360deg);}
+}
+@-webkit-keyframes myfirst{
+	from {transform: rotate(0);}
+	to {transform: rotate(360deg);}
+}
+@-o-keyframes myfirst{
+	from {transform: rotate(0);}
+	to {transform: rotate(360deg);}
+}
+@keyframes replay{
+	from {transform: rotate(0);}
+	to {transform: rotate(1deg);}
+}
+@-moz-keyframes replay{
+	from {transform: rotate(0);}
+	to {transform: rotate(1deg);}
+}
+@-webkit-keyframes replay{
+	from {transform: rotate(0);}
+	to {transform: rotate(1deg);}
+}
+@-o-keyframes replay{
+	from {transform: rotate(0);}
+	to {transform: rotate(1deg);}
+}
+#this_song{
+	position:absolute; top:0; right:0;
+	width:30%;
+	text-align:center;
+}
+#pic{
+	display:inline-block;
+	width:180px; height:180px;
+	border:4px solid rgba(100,100,100,0.5);
+	border-radius:50%;
+	background:rgba(255,255,255,0.5);
+	background-size:100% 100%;
+	background-repeat:no-repeat;
+
+	animation: myfirst 36s;
+	animation-timing-function:linear;
+	animation-iteration-count:infinite;
+
+	-webkit-animation: myfirst 36s;
+	-webkit-animation-timing-function:linear;
+	-webkit-animation-iteration-count:infinite;
+
+	-moz-animation: myfirst 36s;	/* Firefox */
+	-moz-animation-timing-function:linear;
+	-moz-animation-iteration-count:infinite;
+
+	-o-animation: myfirst 36s;	/* Opera */
+	-o-animation-timing-function:linear;
+	-o-animation-iteration-count:infinite;
+}
+#msg span{
+	display:block;
+	opacity:0.8;
+}
+#lrc{
+	position:relative;
+	height:126px;
+	overflow:hidden;
+}
+#lrc ul{
+	transition:1s;
+}
+#lrc ul .green{
+	color:#31c27c;
+}
+
+
+
+#player{
+	padding:40px 0 0 0;
+	/*border:1px solid #ccc;*/
+	font-size:0;
+}
+#btns{
+	display:inline-block;
+	vertical-align:middle;
+}
+#btns span{
+	display:inline-block;
+	margin-right:40px;
+	vertical-align:middle;
+	/*background:#000;*/
+}
+#btns .pre{
+	width:20px; height:20px;
+	background-image:url("./img/player.png");
+	background-position:0 -30px;
+}
+#btns .paused{
+	width:22px; height:30px;
+	background-image:url("./img/player.png");
+	background-position:-30px 0;
+}
+#btns .play{
+	width:22px; height:30px;
+	background-image:url("./img/player.png");
+	background-position:0 0;
+}
+#btns .next{
+	width:20px; height:20px;
+	background-image:url("./img/player.png");
+	background-position:0 -52px;
+}
+#run{
+	display:inline-block; vertical-align:middle;
+	width:500px;
+	font-size:14px;
+}
+#run .wai{
+	height:2px;
+	margin-top:8px;
+	background:rgba(255,255,255,0.2);
+}
+#run .nei{
+	height:2px;
+	width:0;
+	background:rgba(255,255,255,1);
+	font-size:0;
+	position:relative;
+}
+#run .nei span{
+	display:inline-block; vertical-align:bottom;
+	width:10px; height:10px;
+	border-radius:50%;
+	background:#fff;
+	position:absolute;
+	right:-5px; top:-4px;
+}
+#other{
+	display:inline-block; vertical-align:middle;
+}
+#other span{
+	display:inline-block; vertical-align:middle;
+	width:26px; height:24px;
+	background-image:url("./img/player.png");
+}
+#loop,#muted{
+	margin-left:40px;
+}
+#other .loop1{
+	background-position:0 -72px;
+}
+#other .loop2{
+	background-position:0 -205px;
+}
+#other .loop3{
+	background-position:0 -232px;
+}
+#other .loop4{
+	background-position:0 -258px;
+}
+#other .muted1{
+	background-position:0 -143px;
+}
+#other .muted2{
+	background-position:0 -180px;
+}
+#other .wai{
+	margin-left:20px;
+	width:100px;
+	height:2px;
+	background:rgba(255,255,255,0.2);
+}
+#other .nei{
+	height:2px;
+	width:0;
+	background:rgba(255,255,255,1);
+	font-size:0;
+	position:relative;
+}
+#other .nei span{
+	display:inline-block; vertical-align:bottom;
+	width:10px; height:10px;
+	border-radius:50%;
+	background:#fff;
+	position:absolute;
+	right:-5px; top:-4px;
+}
